@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <form>
+              <div class="form-group">
+                <label for="nameInput">Name:</label>
+                <input type="text" class="form-control" id="nameInput" placeholder="Name">
+              </div>
+              <div class="form-group">
+                <label for="priceInput">Name:</label>
+                <input type="number" class="form-control" id="priceInput" placeholder="Price">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputFile">File input</label>
+                <input type="file" id="exampleInputFile">
+                <p class="help-block">Example block-level help text here.</p>
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Check me out
+                </label>
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

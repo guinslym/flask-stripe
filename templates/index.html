@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% from 'macros.html' import homepage_item %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-12">
+        <div class="row">
+            {{ homepage_item(1, 'Test Item', '$24,99', 'Testing description') }}
+            {{ homepage_item(1, 'Bad Item', '$59') }}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="row">
+    <div class="col-xs-12">
+      <form action="" method="POST" id="payment-form">
+      <span class="payment-errors" style="font-weight: bold; color: red"></span>
+
+      <div class="form-group">
+        <label for="cc">Card Number</label>
+        <input type="text" class="form-control" id="cc" placeholder="Card number" data-stripe="number">
+      </div>
+      <div class="form-group">
+        <label for="cvc">CVC</label>
+        <input type="text" class="form-control" id="cvc" placeholder="CVC" data-stripe="cvc">
+      </div>
+      <div class="form-group">
+        <label for="exp-month">Expiration (MM/YYYY)</label>
+        <div class="row">
+            <div class="col-xs-1">
+              <input type="text" class="form-control" placeholder="Month" data-stripe="exp-month">
+            </div>
+            <div class="col-xs-1">
+              <input type="text" class="form-control" placeholder="Year" data-stripe="exp-year">
+            </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    </div>
+  </div>
+{% endblock %}
+
+{% block extra_scripts %}
+  <script src="static/js/payment.js"></script>
+{% endblock %}

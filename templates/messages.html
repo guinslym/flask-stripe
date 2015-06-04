@@ -1,0 +1,20 @@
+{% from 'macros.html' import alert_message %}
+
+<div class="row messages">
+  <div class="col-xs-12">
+    {% with errors = get_flashed_messages(category_filter=["error"]) %}
+      {% if errors %}
+        {% for message in errors %}
+          {{ alert_message(message, 'danger')}}
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+    {% with success = get_flashed_messages(category_filter=["success"]) %}
+      {% if success %}
+        {% for message in success %}
+          {{ alert_message(message, 'success')}}
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+  </div>
+</div>

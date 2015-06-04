@@ -1,0 +1,22 @@
+{% macro homepage_item(id, name, price, description='') -%}
+    <div class="col-sm-4">
+        <div class="thumbnail">
+            <img src="http://placehold.it/320x150" alt="">
+            <div class="caption">
+                <h4 class="pull-right">{{ price }}</h4>
+                <h4><a href="#">{{ name }}</a></h4>
+
+                {% if description %}
+                    <p>{{ description }}</p>
+                {% endif %}
+                <button type="button" class="btn btn-default buy-now-button">Add to cart</button>
+                <button type="button" class="btn btn-primary buy-now-button">Buy now!</button>
+            </div>
+        </div>
+    </div>
+{%- endmacro %}
+
+{% macro alert_message(message, category='info') -%}
+    <div class="alert alert-{{ category }}" role="alert">{{ message }}</div>
+{%- endmacro %}
+
