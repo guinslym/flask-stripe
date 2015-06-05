@@ -1,6 +1,5 @@
-var PUBLISHABLE_KEY = 'pk_test_5qVCIdtmImJvGbMe0LQabSnu';
 
-Stripe.setPublishableKey(PUBLISHABLE_KEY);
+Stripe.setPublishableKey(CREDENTIALS.stripe.PUBLISHABLE_KEY);
 
 function stripeResponseHandler(status, response){
   var $form = $('#payment-form');
@@ -16,7 +15,7 @@ function stripeResponseHandler(status, response){
     // Insert the token into the form so it gets submitted to the server
     $form.append($('<input type="hidden" name="stripeToken" />').val(token));
     // and submit
-    //$form.get(0).submit();
+    $form.get(0).submit();
   }
 }
 

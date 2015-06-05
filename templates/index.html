@@ -6,8 +6,13 @@
 <div class="row">
     <div class="col-md-12">
         <div class="row">
-            {{ homepage_item(1, 'Test Item', '$24,99', 'Testing description') }}
-            {{ homepage_item(1, 'Bad Item', '$59') }}
+            {% for item in items %}
+            {{ homepage_item(item._id, item.name, item.price, item.description)}}
+            {% else %}
+            <p>
+                No items found. Try adding some.
+            </p>
+            {% endfor %}
         </div>
     </div>
 </div>

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="row">
+      <div class="col-xs-12">
+          <h1>{{ item.name }}</h1>
+          <h3>${{ item.price }}</h3>
+      </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <form action="" method="POST" id="payment-form">
+      <span class="payment-errors" style="font-weight: bold; color: red"></span>
+
+      <div class="form-group">
+          <label for="email">Email: </label>
+          <input class="form-control" name="email" type="text" value="john@example.com" required>
+          <p class="help-block">Will be used to register you as a customer.</p>
+      </div>
+      <div class="form-group">
+        <label for="cc">Card Number</label>
+        <input type="text" class="form-control" id="cc" placeholder="Card number" data-stripe="number" value="4242424242424242">
+      </div>
+      <div class="form-group">
+        <label for="cvc">CVC</label>
+        <input type="text" class="form-control" id="cvc" placeholder="CVC" data-stripe="cvc" value="123">
+      </div>
+      <div class="form-group">
+        <label for="exp-month">Expiration (MM/YYYY)</label>
+        <div class="row">
+            <div class="col-xs-1">
+              <input type="text" class="form-control" placeholder="Month" data-stripe="exp-month" value="10">
+            </div>
+            <div class="col-xs-1">
+              <input type="text" class="form-control" placeholder="Year" data-stripe="exp-year" value="20">
+            </div>
+        </div>
+      </div>
+      <button type="submit" class="btn btn-default">Buy Item!</button>
+    </form>
+    </div>
+  </div>
+{% endblock %}
+
+
+
+{% block extra_scripts %}
+  <script src="/static/js/payment.js"></script>
+{% endblock %}

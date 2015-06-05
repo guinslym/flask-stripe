@@ -11,14 +11,16 @@
             <a class="navbar-brand" href="#">rmotr.com | Swag Store</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            {% if session.logged_in %}
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="#">About</a>
+                    <a href="{{ url_for('create_item')}}">Create new Item</a>
                 </li>
                 <li>
                     <a href="#">Contact</a>
                 </li>
             </ul>
+            {% endif %}
             <ul class="nav navbar-nav navbar-right">
               {% if not session.logged_in %}
                 <li><a href="{{ url_for('login') }}">log in</a></li>
